@@ -1,9 +1,11 @@
 package com.example.tae.chucknorrisjokes.ui.home
 
+import com.example.tae.chucknorrisjokes.model.Response
+
 class HomeContract {
 
     interface View{
-        fun showResults(results: List<Any>, function: () -> Unit)
+        fun showResults(results: List<Response>)
         fun showError(message: String)
     }
     interface Presenter{

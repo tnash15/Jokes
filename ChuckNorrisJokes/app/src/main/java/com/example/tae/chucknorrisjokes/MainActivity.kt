@@ -1,10 +1,10 @@
 package com.example.tae.chucknorrisjokes
 
-import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.example.tae.chucknorrisjokes.model.ApiData
+import com.example.tae.chucknorrisjokes.model.Response
 import com.example.tae.chucknorrisjokes.network.APIService
 import com.example.tae.chucknorrisjokes.network.BASE_URL
 import com.example.tae.chucknorrisjokes.ui.home.ApiAdapter
@@ -13,7 +13,6 @@ import com.example.tae.chucknorrisjokes.ui.home.HomePresenter
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -54,14 +53,16 @@ class MainActivity : AppCompatActivity() {
                 url = String(), value = String()
             )
         }
-        override fun showResults(results: List<ApiData>) {
-            ApiAdapter.setData(results)
-        }
-
-
-        override fun showError(message: String) {
-
-        }
     }
 
+    fun showResults(results: List<Response>) {
+        ApiAdapter.setData(results)
+    }
+
+
+    fun showError(message: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    }
 }
+

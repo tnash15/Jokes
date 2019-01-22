@@ -5,16 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.tae.chucknorrisjokes.R
 import com.example.tae.chucknorrisjokes.model.ApiData
+import com.example.tae.chucknorrisjokes.model.Response
 import kotlinx.android.synthetic.main.item_activity.view.*
-import retrofit2.Response
 import java.text.FieldPosition
 
 class ApiAdapter : RecyclerView.Adapter<ApiAdapter.ApiViewHolder>(){
 
-    private val data = arrayListOf<ApiData>()
+    private val data = arrayListOf<Response>()
 
-    fun setData(items: List<ApiData>){
+    fun setData(items: List<Response>){
         data.clear()
         data.addAll(items)
         notifyDataSetChanged()
@@ -47,7 +48,7 @@ class ApiAdapter : RecyclerView.Adapter<ApiAdapter.ApiViewHolder>(){
             tvIcon_url.text = data.url
 
             val tvValue = view.findViewById<TextView>(R.id.tvValue)
-            tvIcon_url.text = data.Value
+            tvIcon_url.text = data.value
         }
     }
 }
